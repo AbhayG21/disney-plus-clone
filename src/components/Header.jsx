@@ -1,42 +1,47 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 function Header() {
+  const navigate = useNavigate();
   return (
-    <Nav>
-      <Logo src="/images/logo.svg" />
-      <NavMenu>
-        <a>
-          <img src="/images/home-icon.svg" alt="" />
-          <span>HOME</span>
-        </a>
+      <Nav>
+          <Logo
+              src="/images/logo.svg"
+              onClick={() => navigate("/")}
+          />
+          <NavMenu>
+              <a>
+                  <img src="/images/home-icon.svg" alt="" />
+                  <span>HOME</span>
+              </a>
 
-        <a>
-          <img src="/images/search-icon.svg" alt="" />
-          <span>SEARCH</span>
-        </a>
+              <a>
+                  <img src="/images/search-icon.svg" alt="" />
+                  <span>SEARCH</span>
+              </a>
 
-        <a>
-          <img src="/images/watchlist-icon.svg" alt="" />
-          <span>WATCHLIST</span>
-        </a>
+              <a>
+                  <img src="/images/watchlist-icon.svg" alt="" />
+                  <span>WATCHLIST</span>
+              </a>
 
-        <a>
-          <img src="/images/original-icon.svg" alt="" />
-          <span>ORIGINALS</span>
-        </a>
+              <a>
+                  <img src="/images/original-icon.svg" alt="" />
+                  <span>ORIGINALS</span>
+              </a>
 
-        <a>
-          <img src="/images/movie-icon.svg" alt="" />
-          <span>MOVIES</span>
-        </a>
+              <a>
+                  <img src="/images/movie-icon.svg" alt="" />
+                  <span>MOVIES</span>
+              </a>
 
-        <a>
-          <img src="/images/series-icon.svg" alt="" />
-          <span>SERIES</span>
-        </a>
-      </NavMenu>
-      <UserImg src="/images/tom.jpeg" />
-    </Nav>
+              <a>
+                  <img src="/images/series-icon.svg" alt="" />
+                  <span>SERIES</span>
+              </a>
+          </NavMenu>
+          <UserImg src="/images/tom.jpeg" onClick={() => navigate("login")} />
+      </Nav>
   );
 }
 
@@ -51,6 +56,7 @@ const Nav = styled.div`
 const Logo = styled.img`
   width: 80px;
   height: 50px;
+  cursor: pointer;
 `;
 const NavMenu = styled.div`
   display: flex;
